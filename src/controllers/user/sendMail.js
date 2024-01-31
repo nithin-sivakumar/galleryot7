@@ -1,5 +1,5 @@
 import { ApiResponse } from "../../utils/ApiResponse.js";
-import { config, sendMail } from "@nithin-sivakumar/mail-sender";
+import { config, sendMail } from "../../services/mailsender.js";
 import { OTP as OTPModel } from "../../models/otp.model.js";
 import { User } from "../../models/user.model.js";
 
