@@ -1,6 +1,8 @@
 // Import nodemailer library and SMTP server details from env.js
-const nodemailer = require("nodemailer");
-const { smtpHost, smtpPort } = require("./env");
+import nodemailer from "nodemailer";
+
+const smtpHost = process.env.SMTPHOST;
+const smtpPort = process.env.SMTPPORT;
 
 // Declare global variables for Gmail user and app password, and transporter instance
 let USER, APP_PASSWORD, SMTPHOST, SMTPPORT;
@@ -110,11 +112,7 @@ const sendMail = async (
   }
 };
 
-module.exports = {
-  sendMail,
-  config,
-};
-
+export { sendMail, config };
 // // Sample usage:
 // // OTP Generator
 // const code = Math.floor(
