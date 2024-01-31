@@ -3,6 +3,7 @@ const whitelist = [
   "http://localhost:5000",
   "http://localhost:5173",
   "http://localhost:3000",
+  "https://galleryot7.onrender.com/",
   // Add more URLs as required
 ];
 
