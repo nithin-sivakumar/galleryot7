@@ -5,8 +5,7 @@ import cors from "cors";
 import indexRouter from "./routes/index.route.js";
 import "./services/deleteOTP.js";
 import { v2 as cloudinary } from "cloudinary";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
+import path from "path";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -39,14 +38,14 @@ app.use(cookieParser());
 
 app.use(indexRouter);
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+// const __dirname = dirname(fileURLToPath(import.meta.url));
 
-console.log(path.join(__dirname, "../dist"));
+// console.log(path.resolve("dist"));
 
-app.use(express.static(path.join(__dirname, "../dist")));
+app.use(express.static(path.resolve("dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../dist/index.html"));
+  res.sendFile(path.resolve("dist/index.html"));
 });
 
 // Export the configured Express application instance for use in other parts of the application
