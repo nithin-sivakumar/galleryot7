@@ -23,7 +23,7 @@ const uploadImage = async (req, res) => {
       });
 
       const created = await Gallery.create({
-        img: response.url,
+        img: response.secure_url,
         title: response.original_filename,
         submittedBy: req.body.submittedBy,
         cloudinaryPublicId: response.public_id,
