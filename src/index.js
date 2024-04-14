@@ -25,6 +25,3 @@ connectDB()
     // Handle errors if MongoDB connection fails
     console.log(`Failed to connect to MongoDB ${err}`);
   });
-
-// Export the configured Express application instance for use in other parts of the application
-export { app };
